@@ -4,12 +4,10 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 #
  class DiceSet
   attr_reader :values
+
   def roll(num)
-    @values = []
-    num.downto(1) { |i|
-      @values.push(1 + rand(6))
-} 
-    end  
+    @values = Array.new(num) { |i|  rand(1..6)}
+  end  
  end
 
 class AboutDiceProject < Neo::Koan
